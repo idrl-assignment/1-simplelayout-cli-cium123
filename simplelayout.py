@@ -17,9 +17,7 @@ def main():
         sys.exit('User exit')
     if args.unit_n != len(args.positions):
         sys.exit('User exit')
-    if min(args.positions) < 1:
-        sys.exit('User exit')
-    if max(args.positions) > (args.board_grid / args.unit_grid)**2:
+    if min(args.positions) < 1 or max(args.positions) > (args.board_grid / args.unit_grid)**2:
         sys.exit('User exit')
     if not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
